@@ -2,7 +2,7 @@ import { say } from "npm:cowsay";
 
 Deno.serve((req) => {
   const { pathname } = new URL(req.url);
-  if (pathname !== "/cow-say") {
+  if (pathname !== "/cowsay") {
     return new Response("Not Found", {
       status: 404,
     });
