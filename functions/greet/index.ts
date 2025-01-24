@@ -1,4 +1,5 @@
-import { STATUS_CODE } from "https://deno.land/std@0.224.0/http/status.ts";
+import { STATUS_CODE } from "jsr:@std/http";
+
 const greeting = Deno.env.get("GREETING") || "Hello";
 
 Deno.serve((req) => {
@@ -6,7 +7,7 @@ Deno.serve((req) => {
 
   if (!pathname.startsWith("/greet")) {
     return new Response("Not Found", {
-      status: 404,
+      status: STATUS_CODE.NotFound,
     });
   }
 
